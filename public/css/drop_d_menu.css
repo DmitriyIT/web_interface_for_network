@@ -1,0 +1,22 @@
+.myDropdownMenu input {
+        min-height: 30px;
+        height: 30px;
+}
+.dropDownContent {
+        display: none;
+        position: absolute;
+        z-index: 100;
+        background-color: #fff;
+        width: 150px;
+        max-height: 250px;
+        overflow-y: scroll;
+}
+.dropDownContent a {
+        display: block;
+        padding-left: 10px;
+}
+.dropDownContent a:hover {
+        display: block;
+        background-color: #D2DCE4;
+        color: black;
+}

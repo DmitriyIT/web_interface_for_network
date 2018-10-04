@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta для соцсетей -->
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Vision">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="for take ptoto to ...">
+    <meta property="og:site_name" content="Vision web">
+    <meta property="article:author" content="Дмитрий Баранов">
+    <!-- Заголовок сайта -->
+    <title>Vision</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/fontello.css"> -->
+    <!-- <link rel="stylesheet" href="css/fontello-embedded.css"> -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/drop_d_menu.css" rel="stylesheet">
+    <link href="css/checkbox_custom.css" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- Фавиконка -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  </head>
+  <body>
+			
+		<header>
+			<div class="row">
+				<div class="col-lg-2">
+					<div class="logo">
+						ВШЭ						
+					</div>
+				</div>
+				<div class="col-lg-11">
+					<ul class="menu_nav">
+						<li class="choose_menu">
+							<a href="#">Главная</a>
+						</li>
+						<li > 
+							<a href="#">Мб еще</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="line_bottom_header"></div>
+			</div>
+		</header>
+		
+		<section class="info_save">
+			<div class="row">
+				<div class="col-lg-2"></div>
+				<div class="col-lg-11 ">
+					<div class="text_none_photo">
+						Непознанные фотографии (<span>{{count_files}}</span>)
+					</div>
+					<div class="is_wrighten">
+						<div class="ddd">
+							<img src="img/disigne_elems/top_left.png" alt="">
+						</div>
+						Отмечено: <span>0</span> шт.
+						<button class="save_changes">Сохранить</button>
+					</div>
+					<!-- <form action="" method="POST" name="user_prop" style="display: inline-block;">
+						<input type="text" name='userName'>
+						<input type="text" name='userAge'>
+						<button type="submit">send</button>
+						<p id="awd"></p>
+					</form> -->
+				</div>
+			</div>
+		</section>
+		<!-- /.info_save -->
+
+		<section class="main">
+			<div class="row">
+				<div class="col-lg-2">
+					<div class="fast_choose_block">
+						<div class="fch_titel">
+							Быстрый выбор
+						</div>
+						<input list="fast_choose" name="" id="input_name_f_choose">
+						<datalist id="fast_choose">
+						</datalist>
+						<button id="button_start_mult_choose">Начать выбирать</button>
+						<form action="#" id="fast_choose_form" style="display: none;"></form>
+					</div>
+					<div class="add_people">
+						<div class="add_p_titel">
+							Добавить человека
+						</div>
+						<input type="text">
+						<p></p>
+						<button>Добавить</button>
+					</div>
+				</div>
+				<!-- /.col-lg-2 -->
+				<div class="col-lg-12">
+					<div class="main_wrap_block">
+						<div class="wrap_overflow">
+							{{#each obj}}
+								<div class="wrap_line_block" id="wrap_line{{folder}}">
+									<div class="left_block_show"></div>
+									<div class="right_block">
+										<div class="panel_for_choose">
+											<form action="#" id="{{folder}}">
+												<div class="div_wrap_input">
+													<input list="character{{folder}}" name="choose_name">
+													<datalist id="character{{folder}}">
+														<!-- <option value="Чебурашка"></option>
+														<option value="Крокодил Гена"></option>
+														<option value="Шапокляк"></option> -->
+													</datalist>
+													<img src="img/disigne_elems/div_input.png" alt="">
+												</div>
+												<button type="submit">Применить</button>
+											</form>
+											<!-- /form -->
+											<button class="get_out_button" fold_del="{{folder}}">Удалить серию</button> {{folder}}
+											<label class="container_checkbox for_fast_choose" style="display: none;">
+												Выбрать (Быстрый выбор)
+											  <input name="{{folder}}" type="checkbox" form="fast_choose_form">
+											  <span class="checkmark"></span>
+											</label>
+										</div>
+										<!-- /.panel_for_choose -->
+										<div class="right_block_scroll">
+											<div class="wrap_for_scroll_rb">
+												{{#each files}}
+													<div class="elem_wrap_div">
+														<img src="img/{{path}}" alt="">
+														<label class="container_checkbox">
+															Не вносить
+														  <input name="{{name}}" type="checkbox" form="{{../folder}}">
+														  <span class="checkmark"></span>
+														</label>
+														<!-- <button>OK</button> -->
+													</div>
+												{{/each}}
+											</div>
+										</div>
+									</div>
+								</div>
+							{{/each}}
+						</div>
+						<img src="img/disigne_elems/main_tl.png" alt="" class="top_left">
+						<img src="img/disigne_elems/main_br.png" alt="" class="bottom_right">
+					</div>
+				</div>
+				<!-- /.col-lg-11 -->
+			</div>
+		</section>
+		<!-- /.main -->
+		
+		<footer>
+			<div class="row">
+				Create by Baranov Dmitry © 2018
+			</div>
+		</footer>
+
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+		<script src="js/show_big_img_and_width.js"></script>
+		<script src="js/ajax_forms.js"></script>
+		<script src="js/take_photo_form.js"></script>
+		<script src="js/drop_down_menu.js"></script>
+		<script src="js/ajax_update_drd.js"></script>
+		<script src="js/ajax_mult_choose.js"></script>
+		<script>
+			$(function() {
+				var link = $('a[data-toggle="modal"]');
+				link.on('click', function(event) {
+					var work = $(this).attr('data-work');
+					var modal = $('.modal');
+					modal.find('.modal-body').load(work+'.html');
+				});
+			});
+
+		</script>
+  </body>
+</html>
